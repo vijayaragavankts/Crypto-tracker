@@ -27,6 +27,7 @@ const CoinsTable = () => {
     console.log( coins );
     useEffect( () => {
         fetchCoins();
+        // eslint-disable-next-line
     }, [ currency ] )
 
 

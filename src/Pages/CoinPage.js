@@ -5,7 +5,7 @@ import { SingleCoin } from '../config/api';
 import axios from 'axios';
 import { LinearProgress, Typography, makeStyles } from '@material-ui/core';
 import CoinInfo from '../components/CoinInfo';
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
 import { numberWithCommas } from '../components/Banner/Carousal';
 
 const CoinPage = () => {
@@ -98,7 +98,7 @@ const CoinPage = () => {
                 { coin?.name }
               </Typography>
               <Typography variant="subtitle1" className={ classes.description }>
-                { ReactHtmlParser( coin?.description.en.split( ". " )[ 0 ] ) }.
+                { parse( coin?.description.en.split( ". " )[ 0 ] ) }.
               </Typography>
               <div className={ classes.marketData }>
                 <span style={ { display: "flex" } }>
